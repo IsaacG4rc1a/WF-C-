@@ -44,7 +44,9 @@
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.cbCate = new System.Windows.Forms.ComboBox();
 			this.label6 = new System.Windows.Forms.Label();
+			this.dgvTemporal = new System.Windows.Forms.DataGridView();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvProd
@@ -52,10 +54,10 @@
 			this.dgvProd.AllowUserToAddRows = false;
 			this.dgvProd.AllowUserToDeleteRows = false;
 			this.dgvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvProd.Location = new System.Drawing.Point(12, 42);
+			this.dgvProd.Location = new System.Drawing.Point(12, 35);
 			this.dgvProd.Name = "dgvProd";
 			this.dgvProd.ReadOnly = true;
-			this.dgvProd.Size = new System.Drawing.Size(523, 313);
+			this.dgvProd.Size = new System.Drawing.Size(523, 131);
 			this.dgvProd.TabIndex = 0;
 			// 
 			// label1
@@ -186,11 +188,21 @@
 			this.label6.TabIndex = 15;
 			this.label6.Text = "Categoria";
 			// 
+			// dgvTemporal
+			// 
+			this.dgvTemporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvTemporal.Location = new System.Drawing.Point(12, 191);
+			this.dgvTemporal.Name = "dgvTemporal";
+			this.dgvTemporal.ReadOnly = true;
+			this.dgvTemporal.Size = new System.Drawing.Size(523, 135);
+			this.dgvTemporal.TabIndex = 16;
+			// 
 			// frmProductos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(818, 455);
+			this.Controls.Add(this.dgvTemporal);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.cbCate);
 			this.Controls.Add(this.btnEliminar);
@@ -211,6 +223,7 @@
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.frmProductos_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvProd)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -234,6 +247,7 @@
 		private System.Windows.Forms.Button btnEliminar;
 		private System.Windows.Forms.ComboBox cbCate;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.DataGridView dgvTemporal;
 	}
 }
 

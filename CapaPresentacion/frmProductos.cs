@@ -14,6 +14,7 @@ namespace CapaPresentacion
 	public partial class frmProductos : Form
 	{
 		CN_Productos _Crud = new CN_Productos();
+		DataTable tabla = new DataTable();
 		private string idProd = null;
 		private bool Editar = false;
 		string estado = "1";
@@ -21,12 +22,14 @@ namespace CapaPresentacion
 		public frmProductos()
 		{
 			InitializeComponent();
+			
 		}
 
 		private void frmProductos_Load(object sender, EventArgs e)
 		{
 			MostrarProdcs();
 			MostrarCate();
+			tabla.Columns.Add("Nombre", typeof(string));
 		}
 
 		private void MostrarCate()
@@ -49,8 +52,16 @@ namespace CapaPresentacion
 			{
 				try
 				{
+					//INSERTA DATOS A TABLA, CONEXION SQL. (TABLA 1)
 					_Crud.InsertarProd(txtNombre.Text, txtDescrip.Text, txtMarca.Text, txtPrecio.Text, txtStock.Text, Convert.ToInt32(cbCate.SelectedValue), estado);
 					MostrarProdcs();
+					
+
+					//INSERTA DATO A TABLA TEMPORAL (TABLA 2)
+					tabla.Rows.Add(txtNombre.Text);
+
+					dgvTemporal.DataSource = tabla;
+
 					MessageBox.Show("El registro se agregó correctamente.");
 					limpiarForm();
 				}
